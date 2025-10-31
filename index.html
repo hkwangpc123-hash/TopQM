@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 Hong Kong Workshop on Topology in Quantum Materials</title>
+  <style>
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  body {
+    padding: 10px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  body {
+    padding: 5px;
+  }
+}
+    
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .header img {
+      max-height: 50px;
+    }
+    .nav {
+      display: flex;
+      gap: 20px;
+    }
+    .nav a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    color: rgb(0, 0, 0);
+}
+
+
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+.header .nav {
+    display: flex;
+    gap: 20px;
+}
+
+.header .nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 16px;
+    margin-right:10px;
+}
+
+.nav a:last-child {
+      margin-right: 0;
+    }
+
+
+.header .nav a:hover {
+    text-decoration: underline;
+}
+
+
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    .header .nav {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        background-color: #ffffff;
+        position:absolute;
+        position:fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+    }
+
+    .header .nav a {
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .header .nav.active {
+        display: flex; 
+    }
+
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right:20px;
+    }
+}
+
+
+
+
+    .gradient-section {
+      background: linear-gradient(to right, #b3d9ac, #f7c8a0);
+      padding: 50px 0;
+      text-align: center;
+    }
+    .gradient-section img {
+      max-width: 600px; 
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      border-radius: 10px; 
+    }
+
+
+    .content-section {
+      background-color: #f2f2f2;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .content-section h1 {
+      font-size: 32px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+    .content-section p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    .registration-button {
+      display: inline-block;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 18px;
+      margin-top: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+      .footer {
+    background-color: black;  
+    color: white;  
+    text-align: center;  
+    padding: 10px 0;  
+    bottom: 0;
+    left: 0;
+    width: 100%;  
+    font-size: 14px; 
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="overlay"></div> 
+
+
+  <div class="header">
+    <img src="images/cuhk_logo.jpg" alt="University Logo">
+    <div class="nav" id="menu">
+      <a href="index.html">Home</a>
+      <a href="speakers.html">Speakers & Organizers</a>
+      <!-- <a href="schedule.html">Schedule</a> -->
+      <a href="location.html">Location</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSec1GT_UKnVaUgQhsULBk42HbuhaHt8UR1M8gXMLqLGAePzvw/viewform?embedded=true">Registration</a>
+      <a href="contact.html">Contact us</a>
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle">
+        ☰
+    </div>
+  </div>
+
+
+  <div class="gradient-section">
+    <img src="images/cover .jpg" alt="Meeting Info" style="width: 100%; height: auto;">
+
+  </div>
+
+
+  <div class="content-section">
+    <h1>2026 Hong Kong Workshop on Topology in Quantum Materials</h1>
+    <p>April 21-24, 2026</p>
+    <p>Chinese University of Hong Kong<br>Shatin, N.T., Hong Kong</p>
+    <br>
+  </div>
+
+  <footer class="footer">
+    <p>Copyright © 2025, CUHK Physics Department</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+
+</body>
+</html>

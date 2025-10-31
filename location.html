@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Location</title>
+  <style>
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3); 
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  body {
+    padding: 10px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  body {
+    padding: 5px;
+  }
+}
+
+
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .header img {
+      max-height: 50px;
+    }
+    .nav {
+      display: flex;
+      gap: 20px;
+    }
+    .nav a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    color: rgb(0, 0, 0);
+}
+
+
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+.header .nav {
+    display: flex;
+    gap: 20px;
+}
+
+.header .nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.header .nav a:hover {
+    text-decoration: underline;
+}
+
+
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    .header .nav {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        background-color: #ffffff;
+        position:absolute;
+        position:fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+    }
+
+    .header .nav a {
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .header .nav.active {
+        display: flex;
+    }
+
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+
+.location-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+.location-description {
+  margin-bottom: 30px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  text-align:center;
+}
+
+.location-description h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.location-description p1 {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+  font-weight: bolder;
+}
+.location-description p2 {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+figcaption {
+      font-size: 16px;
+      color: #555;
+      margin-top: 10px;
+    }
+
+
+.location-map-image {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.location-map-image .map-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 8px;
+}
+
+
+.google-map {
+  text-align: center;
+}
+
+.google-map iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  border-radius: 8px;
+}
+
+.transport-guide {
+  background-color: #f4f8fb;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.transport-guide h2 {
+  font-size: 22px;
+  margin-left: 30px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.transport-guide h3 {
+  font-size: 19px;
+  margin-left: 30px;
+  color: #34495e;
+  margin-top: 20px;
+}
+
+.transport-guide p {
+  margin: 10px 0;
+  padding-left:30px;
+}
+
+    .content {
+      min-height: 600px;
+      margin-top: 100px;
+      padding: 20px;
+      text-align: center;
+    }
+    .footer {
+    background-color: black;
+    color: white;  
+    text-align: center; 
+    padding: 10px 0; 
+    bottom: 0;
+    left: 0;
+    width: 100%; 
+    font-size: 14px;
+}
+  </style>
+</head>
+<body>
+
+<div class="overlay"></div>
+
+
+  <div class="header">
+    <img src="images/cuhk_logo.jpg" alt="University Logo" style="max-height: 50px;">
+    <div class="nav" id="menu">
+      <a href="index.html">Home</a>
+      <a href="speakers.html">Speakers & Organizers</a>
+      <!-- <a href="schedule.html">Schedule</a> -->
+      <a href="location.html">Location</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSec1GT_UKnVaUgQhsULBk42HbuhaHt8UR1M8gXMLqLGAePzvw/viewform?embedded=true">Registration</a>
+      <a href="contact.html">Contact us</a>
+    </div>
+
+     <div class="menu-toggle" id="menu-toggle">
+      ☰
+    </div>
+  </div>
+
+  <div class="location-container">
+
+    <div class="location-description">
+      <h2>Location</h2>
+      <p1>Cheng Yu Tung Building,</p1><br>
+      <p2>The Chinese University of Hong Kong, Shatin, N.T., Hong Kong</p2>
+    </div>
+
+
+    <div class="location-map-image">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/CUHK_Cheng_Yu_Tung_Building_2010.jpg" alt="View of YIA" class="map-image">
+      <figcaption>View of Cheng Yu Tung Building</figcaption>
+      <figcaption>(by Wikipedia user -Wpcpey)</figcaption>
+    </div>
+
+    <div class="location-map-image">
+      <img src="images/campus-map.jpg" alt="CUHK Campus Map" class="map-image">
+    </div>
+
+
+    <div class="google-map">
+      <h3>Google Map</h3>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8320.02093064164!2d114.20646576081471!3d22.41524212898394!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34040620c2f0273b%3A0x908bdf177aa469b3!2sCheng%20Yu%20Tung%20Building!5e0!3m2!1sen!2shk!4v1761817960226!5m2!1sen!2shk"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <div class="transport-guide">
+  <h2>Transportation Guide to CUHK</h2>
+
+   <h3>From Hong Kong International Airport to CUHK</h3>
+        <ul>
+            <li><strong>Taxi:</strong> Take a green taxi (New Territories taxi). The ride takes about 35–45 minutes, costing approximately HKD 300.</li>
+            <li><strong>MTR:</strong>
+                <ol>
+                    <li>Take the <strong>Airport Express</strong> to <strong>Tsing Yi Station</strong>.</li>
+                    <li>Transfer to the <strong>Tung Chung Line</strong> and go to <strong>Nam Cheong Station</strong>.</li>
+                    <li>At Nam Cheong, transfer to the <strong>Tuen Ma Line</strong> and ride to <strong>Hung Hom Station</strong>.</li>
+                    <li>Transfer to the <strong>East Rail Line</strong> towards <strong>Lo Wu / Lok Ma Chau</strong>.</li>
+                    <li>Get off at <strong>University Station</strong>.</li>
+                </ol>
+            </li>
+        </ul>
+
+        <h3>From Hong Kong West Kowloon High-Speed Rail Station to CUHK</h3>
+        <ul>
+            <li><strong>Taxi:</strong> Take a red taxi (urban) or green taxi (New Territories). The ride costs approximately HKD 120–160.</li>
+            <li><strong>MTR:</strong>
+                <ol>
+                    <li>Walk to <strong>Austin Station</strong> (direct connection from West Kowloon Station).</li>
+                    <li>Take the <strong>Tuen Ma Line</strong> to <strong>Hung Hom Station</strong>.</li>
+                    <li>Transfer to the <strong>East Rail Line</strong> towards <strong>Lo Wu / Lok Ma Chau</strong>.</li>
+                    <li>Get off at <strong>University Station</strong>.</li>
+                </ol>
+            </li>
+        </ul>
+
+
+  <h2>Travel and Visa</h2>
+  <p>
+    Visitors to Hong Kong must hold a valid passport. Passports should be valid for at least six months after your planned departure date from Hong Kong. 
+    Nationals of most countries are not required to obtain visas for periods varying from seven days to 180 days, depending on nationality. 
+    Please refer to <a href="http://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html">Hong Kong SAR Immigration Department Home Page</a> 
+    for visa requirements for foreign countries/territories (scroll down to Item. 12 in Part II).
+  </p>
+  <p>
+    Persons who need a visa or entry permit for visit should obtain the appropriate visa or entry permit before travelling to the HKSAR. 
+    You may apply for the appropriate visa or entry permit from the nearest <a href="http://www.fmprc.gov.cn/mfa_eng/">Chinese diplomatic and consular mission</a>.
+  </p>
+
+  <h2>Accommodation</h2>
+  <p>
+    The recommended hotel, <a href="https://www.hyatt.com/hyatt-regency/en-US/shahr-hyatt-regency-hong-kong-sha-tin">Hyatt Regency Hong Kong, Sha Tin</a>, 
+    is next to the venue of the conference. Please see the photo above.
+  </p>
+  <p>
+    Please contact us (Email: <a href="mailto:TopQM@phy.cuhk.edu.hk">TopQM@phy.cuhk.edu.hk</a>) 
+    if you encounter difficulty in booking a room at Hyatt Regency Hong Kong, Sha Tin.
+  </p>
+
+  <h2>Currencies and Exchange</h2>
+  <p>
+    The local currency is the Hong Kong dollar. The Hong Kong dollar is pegged to the US dollar at a rate of approximately US$1 to HK$7.8. 
+    Banks generally offer better exchange rates. Most banks levy a HKD50 commission for each transaction on non-account holders.
+  </p>
+  <p>
+    The <a href="http://www.octopus.com.hk/en/consumer/index.html">Octopus card</a> is an extremely convenient and widely accepted form of payment in Hong Kong. 
+    You can purchase a card and add value at the airport and at the customer service center of most MTR stations.
+  </p>
+</div>
+
+  <footer class="footer">
+    <p>Copyright © 2025, CUHK Physics Department</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

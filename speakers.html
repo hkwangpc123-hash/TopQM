@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speakers&Organizers</title>
+  <style>
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: 40px 0 20px;
+        }
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3); 
+  display: none; 
+}
+
+
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  body {
+    padding: 10px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  body {
+    padding: 5px;
+  }
+}
+
+
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .header img {
+      max-height: 50px;
+    }
+    .nav {
+      display: flex;
+      gap: 20px;
+    }
+    .nav a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    color: rgb(0, 0, 0);
+}
+
+
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+.header .nav {
+    display: flex;
+    gap: 20px;
+}
+
+.header .nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.header .nav a:hover {
+    text-decoration: underline;
+}
+
+
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    .header .nav {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        background-color: #ffffff;
+        position:absolute;
+        position:fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+    }
+
+    .header .nav a {
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .header .nav.active {
+        display: flex; 
+    }
+
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+
+    .content {
+      min-height: 600px;
+      margin-top: 100px; /* Avoid overlap with fixed header */
+      padding: 20px;
+      text-align: center;
+    }
+    .footer {
+    background-color: black;  
+    color: white;  
+    text-align: center;  
+    padding: 10px 0;  
+    bottom: 0;
+    left: 0;
+    width: 100%; 
+    font-size: 14px; 
+}
+
+
+.speaker-section {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto 50px;
+}
+
+
+.speaker-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+}
+
+
+.speaker {
+    width: 48%; 
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+
+.speaker h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.speaker p {
+    font-size: 16px;
+    color: #555;
+    margin-top: 0;
+}
+
+
+@media (max-width: 768px) {
+    .speaker {
+        width: 100%; 
+    }
+}
+
+  </style>
+</head>
+<body>
+
+<div class="overlay"></div> 
+
+
+  <div class="header">
+    <img src="images/cuhk_logo.jpg" alt="University Logo" style="max-height: 50px;">
+    <div class="nav" id="menu">
+      <a href="index.html">Home</a>
+      <a href="speakers.html">Speakers & Organizers</a>
+      <!-- <a href="schedule.html">Schedule</a> -->
+      <a href="location.html">Location</a>
+     <a href="https://docs.google.com/forms/d/e/1FAIpQLSec1GT_UKnVaUgQhsULBk42HbuhaHt8UR1M8gXMLqLGAePzvw/viewform?embedded=true">Registration</a>
+      <a href="contact.html">Contact us</a>
+    </div>
+
+     <div class="menu-toggle" id="menu-toggle">
+      ☰
+    </div>
+  </div>
+
+  <br>
+<h1><u>Confirmed Speakers</u></h1>
+<div class="speaker-section">
+  <div class="speaker-container">
+    
+    <!-- A -->
+    <div class="speaker">
+      <h2>Arita, Ryotaro</h2>
+      <p>University of Tokyo/RIKEN<br>
+         <!-- <a href="mailto:arita@riken.jp">arita@riken.jp</a> -->
+      </p>
+    </div>
+
+    <!-- D -->
+    <div class="speaker">
+      <h2>Dai, Xi</h2>
+      <p>Hong Kong University of Science and Technology<br>
+         <!-- <em>(Email not provided)</em> -->
+      </p>
+    </div>
+
+    <!-- H -->
+    <div class="speaker">
+      <h2>Hesjedal, Thorsten</h2>
+      <p>University of Oxford<br>
+         <!-- <a href="mailto:thorsten.hesjedal@physics.ox.ac.uk">thorsten.hesjedal@physics.ox.ac.uk</a> -->
+      </p>
+    </div>
+
+    <!-- M -->
+    <div class="speaker">
+      <h2>Motome, Yuki</h2>
+      <p>University of Tokyo<br>
+         <!-- <a href="mailto:motome@ap.t.u-tokyo.ac.jp">motome@ap.t.u-tokyo.ac.jp</a> -->
+      </p>
+    </div>
+
+    <!-- P -->
+    <div class="speaker">
+      <h2>Parkin, Stuart</h2>
+      <p>Max Planck Institute<br>
+         <!-- <a href="mailto:parkin@mpi-halle.mpg.de">parkin@mpi-halle.mpg.de</a> -->
+      </p>
+    </div>
+
+    <!-- P -->
+    <div class="speaker">
+      <h2>Pfleiderer, Christian</h2>
+      <p>Technical University of Munich<br>
+         <!-- <a href="mailto:christian.pfleiderer@tum.de">christian.pfleiderer@tum.de</a> -->
+      </p>
+    </div>
+
+    <!-- S -->
+    <div class="speaker">
+      <h2>Soumyanarayanan, Anjan</h2>
+      <p>National University of Singapore<br>
+         <!-- <a href="mailto:anjan@nus.edu.sg">anjan@nus.edu.sg</a> -->
+      </p>
+    </div>
+
+    <!-- T -->
+    <div class="speaker">
+      <h2>Tokura, Yoshinori</h2>
+      <p>University of Tokyo/RIKEN<br>
+         <!-- <a href="mailto:tokura@riken.jp">tokura@riken.jp</a> -->
+      </p>
+    </div>
+
+    <!-- W -->
+    <div class="speaker">
+      <h2>Wu, Congjun</h2>
+      <p>Westlake University<br>
+         <!-- <a href="mailto:wucongjun@westlake.edu.cn">wucongjun@westlake.edu.cn</a> -->
+      </p>
+    </div>
+  </div>
+</div>
+</div>
+<div style="text-align: center; margin: 30px 0; font-size: 30px; line-height: 1.8; color: #333;">
+  More to be added
+</div>
+<br>
+  <h1><u>Organizers</u></h1>
+  <h1>Co-chair</h1>
+  <div class="speaker-section">
+      <div class="speaker-container">
+          <div class="speaker">
+              <h2>Du, Haifeng</h2>
+              <p>High Magnetic Field Laboratory, Chinese Academy of Science</p>
+          </div>
+          <div class="speaker">
+              <h2>Li, Yufan</h2>
+              <p>The Chinese University of Hong Kong</p>
+          </div>
+          <div class="speaker">
+              <h2>Liu, Yizhou</h2>
+              <p>High Magnetic Field Laboratory, Chinese Academy of Science</p>
+          </div>
+          <div class="speaker">
+               <h2>Zang, Jiadong</h2>
+              <p>University of New Hampshire</p>  
+      </div>
+  </div>
+
+<h1 style="text-align: center;"><u>Sponsors</u></h1>
+<div style="text-align: center; margin: 30px 0; font-size: 18px; line-height: 1.8; color: #333;">
+  Department of Physics, The Chinese University of Hong Kong<br>
+  Faculty of Science, The Chinese University of Hong Kong
+</div>
+  <br>
+
+  <footer class="footer">
+    <p>Copyright © 2025, CUHK Physics Department</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+
+</body>
+</html>
